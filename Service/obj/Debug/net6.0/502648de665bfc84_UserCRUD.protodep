@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Proton/UserCRUD.cs \
+obj\Debug\net6.0\Proton/UserCRUDGrpc.cs: Proton/UserCRUD.proto

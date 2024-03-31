@@ -1,0 +1,4 @@
+obj\Debug\net6.0\Protos/PostCRUD.cs \
+obj\Debug\net6.0\Protos/PostCRUDGrpc.cs: C:/Users/ADMIN/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/ADMIN/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/empty.proto\
+ Protos/PostCRUD.proto

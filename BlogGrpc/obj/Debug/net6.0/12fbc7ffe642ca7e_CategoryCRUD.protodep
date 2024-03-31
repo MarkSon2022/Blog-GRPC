@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/CategoryCRUD.cs \
+obj\Debug\net6.0\Protos/CategoryCRUDGrpc.cs: Protos/CategoryCRUD.proto

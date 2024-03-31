@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlogGrpc";
+
+package usercrud;
+
+message User {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+  string role = 5;
+  bool status = 6;
+}
+
+// Service definition for User operations
+service UserCrud {
+  rpc GetAll (Empty) returns (stream User);
+  rpc GetById (GetUserById) returns (User);
+  rpc GetByUsername (GetUserByName) returns (User);
+  rpc GetByUsernameAndPassword (GetByUsernameAndPasswordRequest) returns (User);
+  rpc Add (User) returns (User);
+  rpc Update (User) returns (User);
+  rpc ActivateUser (ActivateUserRequest) returns (User);
+  rpc Remove (GetUserById) returns (Empty);
+}
+
+message Empty {
+  // No need for an actual field, just indicate it's empty
+}
+
+message GetByUsernameAndPasswordRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message GetUserById {
+  string id = 1;
+}
+
+message GetUserByName {
+  string username = 1;
+}
+
+message ActivateUserRequest {
+  string id = 1;
+  bool status = 2;
+}

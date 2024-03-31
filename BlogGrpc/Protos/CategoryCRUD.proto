@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlogGrpc";
+
+package postcrud;
+
+message Category {
+  int32 id = 1;
+  string name = 2;
+}
+
+
+service CategoryCrud {
+  rpc GetAll (EmptyCategory) returns (stream Category);
+  rpc GetById (GetCategoryById) returns (Category);
+  rpc Add (Category) returns (Category);
+  rpc Update (Category) returns (Category);
+  rpc Remove (GetCategoryById) returns (EmptyCategory);
+}
+
+message GetCategoryById {
+  int32 id = 1;
+}
+
+message EmptyCategory {
+  // No need for an actual field, just indicate it's empty
+}

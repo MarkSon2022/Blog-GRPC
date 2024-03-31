@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlogGrpc";
+
+import "google/protobuf/timestamp.proto";
+
+package postcrud;
+
+import "google/protobuf/empty.proto";
+
+message Post {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+  google.protobuf.Timestamp published_at = 4;
+  string author_id = 5;
+  int32 category_id = 6;
+}
+
+
+service PostCrud {
+  rpc GetAll (EmptyPost) returns (stream Post);
+  rpc GetById (GetPostById) returns (Post);
+  rpc Add (Post) returns (Post);
+  rpc Update (Post) returns (Post);
+  rpc Remove (GetPostById) returns (EmptyPost);
+}
+
+message GetPostById {
+  int32 id = 1;
+}
+
+message EmptyPost {
+  // No need for an actual field, just indicate it's empty
+}

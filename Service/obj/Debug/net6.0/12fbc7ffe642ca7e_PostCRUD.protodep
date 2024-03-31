@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/PostCRUD.cs \
+obj\Debug\net6.0\Protos/PostCRUDGrpc.cs: Protos/PostCRUD.proto
